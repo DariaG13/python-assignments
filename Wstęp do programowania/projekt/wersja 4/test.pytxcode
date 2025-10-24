@@ -1,0 +1,114 @@
+=>PYTHONTEX#py#default#default#0#code#####19#
+import sympy as sp
+=>PYTHONTEX#py#default#default#1#code#####72#
+n=sp.Symbol('n', real=True)
+równanie = sp.Eq((n**2-3*n+4)/(n**2), (37/50))
+rozwiązanie=sp.solveset(równanie, n)
+print('Zwrócone rozwiązania to: ' + str(rozwiązanie))
+=>PYTHONTEX#py#default#default#2#code#####81#
+naturalne=[]
+for x in rozwiązanie:
+	if(x>0 and x//1==x):
+		naturalne.append(int(x))
+string='Po sprawdzeniu przez Pythona wiadomo, że liczby naturalne stanowiące rozwiązanie równania to: '
+
+for y in naturalne:
+	string+=str(y)
+string+='.'
+print(string)
+=>PYTHONTEX#py#default#default#3#code#####99#
+czarnekule=input('Podaj ilość czarnych kul: )
+licznik=1
+mianownik=2
+
+
+if not (czarnekule>=1 and czarnekule//1==czarnekule):
+	czarnekule=2
+if not(licznik/mianownik>=0 and licznik/mianownik<=1):
+	licznik=37
+	mianownik=50
+
+=>PYTHONTEX#py#default#default#4#i#####116#
+czarnekule
+=>PYTHONTEX#py#default#default#5#i#####117#
+licznik
+=>PYTHONTEX#py#default#default#6#i#####117#
+mianownik
+=>PYTHONTEX#py#default#default#7#i#####125#
+czarnekule
+=>PYTHONTEX#py#default#default#8#i#####125#
+czarnekule
+=>PYTHONTEX#py#default#default#9#i#####143#
+czarnekule+1
+=>PYTHONTEX#py#default#default#10#i#####143#
+czarnekule+1
+=>PYTHONTEX#py#default#default#11#i#####143#
+czarnekule
+=>PYTHONTEX#py#default#default#12#i#####143#
+czarnekule-1
+=>PYTHONTEX#py#default#default#13#i#####143#
+czarnekule-1
+=>PYTHONTEX#py#default#default#14#i#####143#
+czarnekule
+=>PYTHONTEX#py#default#default#15#i#####150#
+czarnekule
+=>PYTHONTEX#py#default#default#16#i#####150#
+czarnekule+1
+=>PYTHONTEX#py#default#default#17#i#####150#
+czarnekule
+=>PYTHONTEX#py#default#default#18#i#####150#
+czarnekule-1
+=>PYTHONTEX#py#default#default#19#i#####150#
+licznik
+=>PYTHONTEX#py#default#default#20#i#####150#
+mianownik
+=>PYTHONTEX#py#default#default#21#code#####155#
+n=sp.Symbol('n', real=True)
+
+równanie2=sp.Eq(((n-czarnekule)*(n-czarnekule-1))/(n**2)+((czarnekule)*(n-czarnekule+1))/(n**2), (licznik/mianownik))
+
+rozwiązanie2=sp.solveset(równanie2, n)
+
+if not type(rozwiązanie)==sp.sets.sets.EmptySet:
+	print('Istnieją rzeczywiste rozwiązania równania i są to: ' + str(rozwiązanie2) +'. Sprawdźmy, które z nich są liczbami naturalnymi nie mniejszymi od liczby kul czarnych.')
+
+	naturalne2=[]
+	for x in rozwiązanie2:
+		if(x//1==x and x>=czarnekule):
+			naturalne2.append(int(x))
+	if len(naturalne2)==1:
+		print('Jest jedno rozwiązanie spełniające warunki: ' + str(naturalne2[0]) + '. Tyle jest kul w pudełku.')
+	elif len(naturalne2)>1:
+		print('Jest więcej rozwiązań spełniających warunki. Są to: ')
+		for y in naturalne2:
+			print(str(y)+', ')
+		print(' więc liczbą kul w pudełku jest któraś z tych liczb.')
+	else:
+		print('Żadne z rozwiązań nie jest liczbą naturalną nie mniejszą niż ilość czarnych kul. Oznacza to, że z podanymi danymi zadanie nie ma rozwiązań.')
+else:
+	print('Nie ma rzeczywistych rozwiązań równania – zmień dane!')
+=>PYTHONTEX:SETTINGS#
+version=0.18
+outputdir=pythontex-files-test
+workingdir=.
+workingdirset=false
+gobble=none
+rerun=default
+hashdependencies=default
+makestderr=false
+stderrfilename=full
+keeptemps=none
+pyfuture=default
+pyconfuture=none
+pygments=true
+pygglobal=:GLOBAL||
+fvextfile=-1
+pyconbanner=none
+pyconfilename=stdin
+depythontex=false
+pygfamily=py|python3|
+pygfamily=pycon|pycon|
+pygfamily=sympy|python3|
+pygfamily=sympycon|pycon|
+pygfamily=pylab|python3|
+pygfamily=pylabcon|pycon|
